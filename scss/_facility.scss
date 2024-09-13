@@ -1,0 +1,273 @@
+// Color Variables
+$primary-color: #2c3e50; // Primary text color
+$secondary-color: #007bff; // Accent color
+$background-color: #f4f4f4; // Background color for the section
+$card-background-color: #800080; // Purple background color for facility items
+$font-family: 'Arial', sans-serif; // Font family
+
+// Section Styles
+#facility {
+  margin: 20px;
+  padding: 50px 20px;
+ 
+  text-align: center;
+
+  h2 {
+    font-family: $font-family;
+    color: $primary-color;
+    margin-bottom: 40px;
+    font-size: 2rem;
+  }
+
+  .container {
+    display: flex;
+    flex-wrap: wrap; // Allow wrapping for responsiveness
+    gap: 20px; // Gap between items
+    justify-content: space-between; // Distribute space between items
+    margin: auto;
+    width: 90%; // Center the container
+  }
+}
+
+// Facility Item Styles
+.facility-item {
+  background-color: $secondary-color; 
+  color: white; // Text color set to white for contrast
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  flex: 1 1 calc(25% - 20px); // Flex basis to allow 4 items per row with gaps
+  text-align: left;
+
+  &:hover {
+    background-color: darken($secondary-color, 10%);
+  }
+
+  i {
+    font-size: 2rem;
+    color: white;
+    margin-bottom: 15px;
+  }
+
+  h3 {
+    font-family: $font-family;
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+  }
+
+  p {
+    font-family: $font-family;
+    line-height: 1.6;
+  }
+}
+
+// Facility Row Styles
+.facility-row {
+  display: flex;
+  align-items: stretch; // Ensure both items stretch to match height
+  gap: 20px; // Space between image and content
+
+  &:not(:last-child) {
+    margin-bottom: 40px; // Space between rows
+  }
+
+  .image-container {
+    flex: 1 1 50%; // Adjust width as needed
+    max-width: 50%; // Ensure it does not exceed 50%
+    margin-right: 20px; // Space between image and content
+
+    img {
+      width: 100%;
+      height: auto; // Ensure the image maintains aspect ratio
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+  }
+
+  .content-container {
+    flex: 1 1 50%; // Adjust width as needed
+    max-width: 50%; // Ensure it does not exceed 50%
+    padding: 20px;
+    background-color: $secondary-color;
+    color: black;
+
+    h3 {
+      font-family: $font-family;
+      font-size: 2rem;
+      margin-bottom: 20px;
+      color: black;
+    }
+
+    p {
+      font-family: $font-family;
+      line-height: 1.6;
+      margin-bottom: 20px;
+      color: white;
+      font-size: 1.5rem;
+    }
+
+    .find-doctor-btn {
+      display: inline-block;
+      padding: 10px 20px;
+      background-color: $card-background-color;
+      color: #fff;
+      text-transform: uppercase;
+      font-family: $font-family;
+      font-weight: bold;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+
+      &:hover {
+        background-color: darken($card-background-color, 10%);
+      }
+    }
+  }
+}
+
+// Reverse Layout for Alternating Rows
+.reverse-layout {
+  flex-direction: row-reverse; // Image on the right, content on the left
+
+  .image-container {
+    margin-right: 0;
+    margin-left: 20px; // Space between image and content
+  }
+
+  .content-container {
+    margin-left: 20px; // Space between content and image
+  }
+}
+// General menu button styles
+.menu-button {
+  position: fixed; // Fixed position to keep it in place
+  top: 20px; // Distance from the top
+  right: 20px; // Distance from the right
+ // Background color
+  color: white; // Text color
+  padding: 10px 20px; // Padding
+  border: none; // Remove default border
+  border-radius: 5px; // Rounded corners
+  cursor: pointer; // Pointer cursor on hover
+  z-index: 1000; // Ensure it's above other elements
+  font-family: $font-family; // Use the same font family
+
+}
+.popup-form {
+  display: none; /* Hidden by default */
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.4);
+
+  .form-container {
+      background-color: white;
+      margin: 10% auto; // Adjusted margin for better positioning
+      padding: 20px;
+      border: 1px solid #888;
+      width: 80%;
+      max-width: 500px; // Increased max-width for larger form
+      border-radius: 10px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+      position: relative;
+
+      .close-btn {
+          position: absolute;
+          top: 10px;
+          right: 20px;
+          color: #aaa;
+          font-size: 28px;
+          font-weight: bold;
+          cursor: pointer;
+
+          &:hover,
+          &:focus {
+              color: black;
+              text-decoration: none;
+              cursor: pointer;
+          }
+      }
+
+      h2 {
+          margin-bottom: 20px;
+      }
+
+      form {
+          display: flex;
+          flex-direction: column;
+
+          label {
+              margin-bottom: 5px;
+          }
+
+          input {
+              margin-bottom: 15px;
+              padding: 10px;
+              border: 1px solid #ccc;
+              border-radius: 5px;
+          }
+
+          button {
+              padding: 10px;
+              background-color: #007bff;
+              color: white;
+              border: none;
+              border-radius: 5px;
+              cursor: pointer;
+              transition: background-color 0.3s;
+
+              &:hover {
+                  background-color: #0056b3;
+              }
+          }
+      }
+  }
+}
+
+
+
+// Responsive Styles
+@media screen and (max-width: 1024px) {
+  .container {
+    flex-direction: column; // Stack rows vertically on smaller screens
+
+    .facility-row {
+      flex-direction: column; // Stack image and content vertically
+      gap: 20px; // Space between stacked items
+
+      .image-container,
+      .content-container {
+        width: 100%; // Full width for stacked items
+        padding: 10px; // Add padding for small screens
+      }
+
+      .image-container img {
+        max-width: 100%; // Ensure image is responsive
+        margin: 0 auto;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .facility-row {
+    flex-direction: column; // Ensure vertical stacking for very small screens
+
+    .image-container {
+      img {
+        max-width: 100%; // Ensure image is fully visible
+        margin: 0 auto;
+      }
+    }
+
+    .content-container {
+      width: 100%;
+      padding: 10px;
+    }
+  }
+}

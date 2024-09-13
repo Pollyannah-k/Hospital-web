@@ -1,0 +1,603 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CuraCare  Hospital Website</title>
+    <link rel="stylesheet" href="css/main.min.css">
+    <!--BOXICONS CDN-->
+    <link rel="stylesheet" href=".nav.scss"
+    
+
+
+    
+
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+    <!--FONT AWSOME CDN-->
+    <script src="https://kit.fontawesome.com/69a5e6fb13.js" crossorigin="anonymous"></script>
+   
+
+   
+
+
+</head>
+<body>
+    <nav>
+        <div class="container">
+            <a href="#" class="nav_logo"><h3>CuraCare</h3></a>
+            <ul id="nav_items">
+                <li><a href="#">Home</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#doctors">Doctors</a></li>
+                <li><a href="#facility">Facility</a></li>
+                <li><a href="#about-us">About us</a></li>
+                <li><a href="#contact-us">Contact us</a></li>
+            </ul>
+            <div class="auth-buttons">
+                <button class="sign-in">Sign In</button>
+                <button class="login">Login</button>
+            </div>
+            <div class="menu-button">
+                <button class="button menu" id="open_nav_btn"><i class="fa-solid fa-bars"></i></button>
+                <button class="button btn" id="close_nav_btn"><i class="fa-solid fa-x"></i></button>
+            </div>
+        </div>
+        <!-- Popup Form -->
+<!-- Login Popup Form -->
+<div class="form-popup" id="loginForm" style="display:none;">
+    <form action="/action_page.php" class="form-container">
+      <h1>Login</h1>
+  
+      <label for="email"><b>Email</b></label>
+      <input type="text" placeholder="Enter Email" name="email" required>
+  
+      <label for="psw"><b>Password</b></label>
+      <input type="password" placeholder="Enter Password" name="psw" required>
+  
+      <button type="submit" class="btn">Login</button>
+      <button type="button" class="btn cancel" onclick="closeForm('loginForm')">Close</button>
+    </form>
+  </div>
+  
+  <!-- Sign In Popup Form -->
+  <div class="form-popup" id="signInForm" style="display:none;">
+    <form action="/action_page.php" class="form-container">
+      <h2>Sign In</h2>
+  
+      <label for="email"><b>Email</b></label>
+      <input type="text" placeholder="Enter Email" name="email" required>
+  
+      <label for="psw"><b>Password</b></label>
+      <input type="password" placeholder="Enter Password" name="psw" required>
+  
+      <button type="submit" class="btn">Sign In</button>
+      <button type="button" class="btn cancel" onclick="closeForm('signInForm')">Close</button>
+    </form>
+  </div>
+  
+  
+  
+  
+    </nav>
+    
+    
+<!===========END OF NAV==============>
+<header>
+    <div class="container">
+        <div class="header_content">
+            <h1>We Care About Your Health</h1>
+            <p>Welcome to CuraCare, where compassionate care meets professional excellence. 
+                We are dedicated to providing personalized, high-quality healthcare 
+                services that cater to your unique needs.</p>
+            <div class="cta-buttons">
+                <div class="sign-up-form">
+                    <input type="text" placeholder="Enter your info">
+                    <button class="sign-up" id="sign-up-btn">Sign Up</button>
+                </div>
+                <div class="button-group">
+                    <a href="#book" class="book-now" id="book-now-btn">Book Now</a>
+                    <a href="#play" class="play-video" id="play-video-btn">
+                        <i class="fa-solid fa-circle-play"></i> Play Video
+                    </a>
+                    
+                    <div id="video-popup" class="video-popup">
+                        <div class="video-popup-content">
+                            <span class="close-btn">×</span>
+                            <iframe class="murf-embed" width="560" height="315" src="https://haiper.ai/creation/66e077e73701c555ea95611e" allowfullscreen title="Murf Embed Player" style="border: none;"></iframe>
+                            <script src="https://haiper.ai/creation/66e077e73701c555ea95611e"></script>
+                        </div> 
+                    </div>
+                    
+                    
+                    
+
+                </div>
+            </div>
+           
+            <div class="stats-container">
+                <div class="stat-item">
+                    <h3>95%</h3>
+                    <p>Customer Satisfaction</p>
+                </div>
+                <div class="stat-item">
+                    <h3>1,500+</h3>
+                    <p>Happy Clients</p>
+                </div>
+                <div class="stat-item">
+                    <h3>3,000+</</h3>
+                    <p>Surgeries Done</p>
+                </div>
+                <div class="stat-item">
+                    <h3>100%</h3>
+                    <p>Success Rate</p>
+                </div>
+            </div>
+        </div>
+        <div class="image-container">
+            <img src="./asserts/welcome pic.jpg" alt="header_image">
+        </div>
+    </div>
+
+    
+</header>
+
+  
+<!===========END OF HEADER==============>
+
+
+<section id="services">
+    <div class="services-header">
+        <h2>Our services</h2>
+        <p>Among  many of our services are:
+        </p>
+      </div>
+    
+    <div class="container">
+        <!-- Service 1 -->
+        <div class="service-item" id="service-1">
+            <i class="fa-solid fa-truck-medical"></i>
+            <h3>Accidents & Emergency</h3>
+            <p>Accident and Emergency unit has grown
+                in its reputation to become one of the leading Accident
+                & Emergency units in East and Central Africa</p>
+        </div>
+
+        <!-- Service 2 -->
+        <div class="service-item" id="service-2">
+            <i class="fa-solid fa-ear-listen"></i>
+            <h3>Consultant clinic</h3>
+            <p>See our available services at 
+                consultant clinic</p>
+        </div>
+
+        <!-- Service 3 -->
+        <div class="service-item" id="service-3">
+            <i class="fa-solid fa-dna"></i>
+            <h3>Renal unit</h3>
+            <p>This Unit provides hemodialysis for both
+                in and outpatients with chronic or acute 
+                kidney disease requiring renal replacement therapy</p>
+        </div>
+
+        <!-- Service 4 -->
+        <div class="service-item" id="service-4">
+            <i class="fa-solid fa-heart-pulse"></i>
+            <h3>CuraCare Comprehensive care unit (CCCC)</h3>
+            <p>CuraCare Comprehensive Care Clinic (CCCC) opened its doors 
+                in 2006 in response to the overwhelming burden of the HIV epidemic</p>
+        </div>
+
+        <!-- Service 5 -->
+        <div class="service-item" id="service-5">
+            <i class="fa-solid fa-utensils"></i>
+            <h3>Nutrition counselling services</h3>
+            <p>We offer nutrition services to in-patients, out-patients,
+                during well baby and antenatal clinics.</p>
+        </div>
+
+        <!-- Service 6 -->
+        <div class="service-item" id="service-6">
+            <i class="fa-solid fa-x-ray"></i>
+            <h3>Radiology</h3>
+            <p>Our goal is to provide high quality images of diagnostic 
+                value to our patients and referring clinicians within the shortest
+                time possible</p>
+        </div>
+
+        <!-- Service 7 -->
+        <div class="service-item" id="service-7">
+            <i class="fa-solid fa-pills"></i>
+            <h3>Pharmacy</h3>
+            <p>We endeavor to offer quality, efficient, and professional 
+                pharmaceutical services to patients and other clients.</p>
+        </div>
+
+        <!-- Service 8 -->
+        <div class="service-item" id="service-8">
+            <i class="fa-solid fa-child"></i>
+            <h3>Antenatal services</h3>
+            <p>The Mother and child Health Clinic (MCHC) which is part of the
+                maternity ward caters for antenatal mothers and children</p>
+        </div>
+
+        <!-- Service 9 -->
+        <div class="service-item" id="service-9">
+            <i class="fa-solid fa-book-open-reader"></i>
+            <h3>Counselling</h3>
+            <p>We boast of professional therapists whose approach to
+                counselling is wholesome in addressing social issues.</p>
+        </div>
+
+        <!-- Service 10 -->
+        <div class="service-item" id="service-10">
+            <i class="fa-solid fa-bong"></i>
+            <h3>Laboratory</h3>
+            <p>Our laboratories provide confirmatory diagnosis
+                and improved management of disease.</p>
+        </div>
+        <div class="container">
+        <h2>Are you loking for:</h2> </div>
+        <div class="service-item" id="service-11">
+            <i class="fa-solid fa-user-doctor"></i>
+            <h3>Doctor profile</h3>
+            <p>Meet our experienced doctors and specialists..</p>
+            <a href="doctor-page.html" class="btn">View Doctors</a>
+        </div>
+        <div class="service-item" id="service-12">
+            <i class="fa-solid fa-phone"></i>
+            <h3>Telemedicine Consultation</h3>
+            <p>Get medical advice from the comfort of your home.</p>
+            <a href="telemedicine.html" class="btn">Learn More</a>
+        </div>
+        <div class="service-item" id="service-13">
+            <i class="fa-solid fa-stethoscope"></i>
+            <h3>Specialized Treatments</h3>
+            <p>Discover our range of specialized medical treatments.</p>
+            <a href="specialized-treatments.html" class="btn">Explore Treatments</a>
+        </div>
+        <div class="service-item" id="service-14">
+            <i class="fa-solid fa-robot"></i>
+            <h3>Need Help?</h3>
+            <p>Chat with our virtual assistant for quick support</p>
+            <button id="chatbot-btn" class="btn">Chat Now</button>
+        </div>
+    
+    </div>
+</section>
+<!===========END OF SERVICES==============>
+<section id="doctors">
+    <h2 class="doctor-header">Our Best Doctors</h2>
+    <p class="doctor-paragraph">Among our many best doctors.This are the  among the top 10 best doctors.</p>
+    
+    <div class="container">
+        <!-- Doctor 1 -->
+        <article class="doctor-card">
+            <div class="doctors_image">
+                <img src="asserts/dentist.jpg" alt="Dr. Max Greenfield">
+            </div>
+            <div class="doctors_details">
+                <h3>Dr. Max Greenfield</h3>
+                <small>Dentist</small>
+                <div class="doctors_socials">
+                    <a href="https://www.linkedin.com" target="_blank"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://www.twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
+                    <a href="https://www.facebook.com" target="_blank"><i class="fab fa-facebook"></i></a>
+                    <a href="https://www.instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+                    <a href="https://api.whatsapp.com/send?phone=(555) 555-5555" class="doctors_whatsapp"><i class="fab fa-whatsapp"></i></a>
+                </div>
+            </div>
+        </article>
+        
+        <!-- Doctor 2 -->
+        <article class="doctor-card">
+            <div class="doctors_image">
+                <img src="asserts/doctor 7.jpg" alt="Dr. Phil Obisanya">
+            </div>
+            <div class="doctors_details">
+                <h3>Dr. Phil Obisanya</h3>
+                <small>General Practitioner</small>
+                <div class="doctors_socials">
+                    <a href="https://www.linkedin.com" target="_blank"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://www.twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
+                    <a href="https://www.facebook.com" target="_blank"><i class="fab fa-facebook"></i></a>
+                    <a href="https://www.instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+                    <a href="https://api.whatsapp.com/send?phone=(555) 555-5555" class="doctors_whatsapp"><i class="fab fa-whatsapp"></i></a>
+                </div>
+            </div>
+        </article>
+
+        <!-- Doctor 3 -->
+        <article class="doctor-card">
+            <div class="doctors_image">
+                <img src="asserts/doctor8.jpg" alt="Dr. Jang Wonyoung">
+            </div>
+            <div class="doctors_details">
+                <h3>Dr. Jang Wonyoung</h3>
+                <small>Surgeon</small>
+                <div class="doctors_socials">
+                    <a href="https://www.linkedin.com" target="_blank"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://www.twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
+                    <a href="https://www.facebook.com" target="_blank"><i class="fab fa-facebook"></i></a>
+                    <a href="https://www.instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+                    <a href="https://api.whatsapp.com/send?phone=(555) 555-5555" class="doctors_whatsapp"><i class="fab fa-whatsapp"></i></a>
+                </div>
+            </div>
+        </article>
+
+        <!-- Doctor 4 -->
+        <article class="doctor-card">
+            <div class="doctors_image">
+                <img src="./asserts/doctor 11.jpg" alt="Dr. Aditi Anika">
+            </div>
+            <div class="doctors_details">
+                <h3>Dr. Aditi Anika</h3>
+                <small>Cardiologist</small>
+                <div class="doctors_socials">
+                    <a href="https://www.linkedin.com" target="_blank"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://www.twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
+                    <a href="https://www.facebook.com" target="_blank"><i class="fab fa-facebook"></i></a>
+                    <a href="https://www.instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+                    <a href="https://api.whatsapp.com/send?phone=(555) 555-5555" class="doctors_whatsapp"><i class="fab fa-whatsapp"></i></a>
+                </div>
+            </div>
+        </article>
+    </div>
+</section>
+<!===========END OF DOCTORS==============>
+<section id="facility">
+    <h2>Easy Steps And Get Your Solution</h2>
+    <div class="container">
+        <!-- Facility Item 1 -->
+        <div class="facility-item">
+            <i class="fa-solid fa-user-doctor"></i>
+            <h3>Doctor Profile</h3>
+            <p>Check doctor profile to view their qualifications, specializations, and experience. Make sure 
+                they are available and match the service you are looking for.</p>
+        </div>
+
+        <!-- Facility Item 2 -->
+        <div class="facility-item">
+            <i class="fa-solid fa-hospital-user"></i>
+            <h3>Provide Consultation</h3>
+            <p>After selecting a doctor, book an appointment and provide necessary details regarding your health issue. Then submit medical reports,
+                symptoms, and any other relevant information online.</p>
+        </div>
+
+        <!-- Facility Item 3 -->
+        <div class="facility-item">
+            <i class="fa-solid fa-comment-medical"></i>
+            <h3>Receive Your Consultation</h3>
+            <p>Once the consultation is booked, you can meet the doctor either in person or via an online platform (if available). During this session, the doctor will diagnose the problem and 
+                suggest treatments or further tests if necessary.</p>
+        </div>
+
+        <!-- Facility Item 4 -->
+        <div class="facility-item">
+            <i class="fa-solid fa-square-poll-horizontal"></i>
+            <h3>Get Your Solution</h3>
+            <p>After the consultation, you will receive a treatment plan, prescriptions, 
+                or referrals for additional care. The solution could also involve
+                 ongoing treatment or follow-up consultations, 
+                depending on the nature of the health issue.</p>
+        </div>
+
+        <!-- First Row: Content on the left, Image on the right -->
+        <div class="facility-row content-left">
+            <div class="content-container">
+                <h3>Best Doctor Anywhere And Anytime</h3>
+                <p>In today's fast-paced world, finding the right healthcare professional can be challenging.
+                    Our platform ensures you have access to top-tier doctors from anywhere, at any time. 
+                    Whether you're at home, on the go, or traveling, you can easily connect with experienced physicians
+                    who provide expert care tailored to your needs. With our user-friendly interface and comprehensive
+                    doctor profiles, you can make informed decisions about your healthcare, schedule appointments, and
+                    receive consultations without the hassle.
+                    Experience the convenience of having the best medical expertise at your fingertips, whenever you need it.</p>
+                <button class="find-doctor-btn" id="find-doctor-btn">Find Doctor Now</button>
+            </div>
+            <div class="image-container">
+                <img src="asserts/facility 6.jpg" alt="Doctors in surgery room" />
+            </div>
+        </div>
+  
+        <!-- Second Row: Image on the left, Content on the right -->
+        <div class="facility-row image-left">
+            <div class="image-container">
+                <img src="asserts/facility 4.jpg" alt="Doctor Image" />
+            </div>
+            <div class="content-container">
+                <h3>Urgent Online Care Solution Your Problem</h3>
+                <p>When medical issues arise unexpectedly, time is of the essence.
+                    Our urgent online care solution provides immediate access to 
+                    healthcare professionals who can address your concerns promptly 
+                    and efficiently. Whether you’re dealing with a sudden health issue
+                    or need urgent advice, our platform connects you with experienced
+                    doctors who offer virtual consultations tailored to your situation. 
+                    You’ll receive timely and accurate guidance, prescription support,
+                    and follow-up care—all from the comfort of your home. 
+                    Our goal is to ensure you get the care you need quickly, without 
+                    compromising on quality or convenience.</p>
+                <button class="find-doctor-btn" id="take-appointment-btn">Take appointment</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Pop-up Form -->
+    <div id="popup-form" class="popup-form">
+        <div class="form-container">
+            <span class="close-btn" id="close-btn">&times;</span>
+            <h2>Register</h2>
+            <form>
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required>
+
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+    </div>
+</section>
+<!==========END OF FACILITY==============>
+
+    
+    <section id="about-us">
+        <h2>What People Say About Us</h2>
+        <p>Here are some of the testimonials from our happy clients.</p>
+        <div class="flexbox-container">
+            
+        <div class="slider-container">
+            <div class="vertical-content">
+                <!-- content items here -->
+          <!-- Left Column -->
+          <div class="testimonial-column testimonial-column-left">
+            <div class="testimonial-item">
+              <img src="asserts/profile pic 1.jpg" alt="Person 1">
+              <h3>Richard Kocher</h3>
+              <p>"The care and attention I received here were exceptional.
+                 The staff is professional and made me feel comfortable throughout my treatment.
+     Highly recommended!"</p>
+            </div>
+            <div class="testimonial-item">
+              <img src="asserts/profile pic 2.jpg" alt="Person 3">
+              <h3>Jonhle Carre</h3>
+              <p>"This hospital provided outstanding service.
+                 The environment was clean, and the staff made sure I was 
+                 comfortable and informed every step of the way."</p>
+            </div>
+          </div>
+      
+          <!-- Right Column -->
+          <div class="testimonial-column testimonial-column-right">
+            <div class="testimonial-item">
+              <img src="asserts/profile pic 3.jpg" alt="Person 2">
+              <h3>Jennie Fields</h3>
+              <p>"I was so impressed by the facility and the quality of care.
+                 The doctors and nurses were always attentive and supportive during my recovery."</p>
+            </div>
+            <div class="testimonial-item">
+              <img src="asserts/profile pic 4.jpg" alt="Person 4">
+              <h3>Rachel Gibson</h3>
+              <p>"From the moment I walked in, I knew I was in good hands.
+                The entire team was compassionate, and I couldn't have asked for better treatment."</p>
+            </div>
+          </div>
+        </div>
+        </div>
+        </div>
+      
+        <!-- Navigation Arrows (shared between both columns) -->
+        <div class="navigation">
+          <span class="prev">&#10094;</span>
+          <span class="next">&#10095;</span>
+        </div>
+        <div class="register-section">
+            <div class="flexbox">
+                <h2>Want to Register Easily?</h2>
+                <button id="register-btn">Submit Here</button>
+            </div>
+        
+            <!-- Pop-up Form -->
+            <div id="popup-form" class="popup-form">
+                <div class="form-container">
+                    <span class="close-btn" id="close-btn">&times;</span>
+                    <h3>Register</h3>
+                    <form>
+                        <label for="name">Name:</label>
+                        <input type="text" id="name" name="name" required>
+        
+                        <label for="email">Email:</label>
+                        <input type="email" id="email" name="email" required>
+        
+                        <label for="password">Password:</label>
+                        <input type="password" id="password" name="password" required>
+        
+                        <button type="submit">Submit</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        
+        
+      </section>
+      <!===========END OF ABOUT==============>
+      <!-- Add Font Awesome CDN link in the head section of your HTML -->
+
+  
+  <footer id="contact">
+    <div class="container">
+      <div class="footer-container">
+        
+        <div class="footer-section">
+          <h3>About Us</h3>
+          <p>Curacare Hospital's website offers easy access to services,
+             physician profiles, appointment scheduling, health tips, and 
+             patient resources in a user-friendly format.</p>
+        </div>
+  
+        <div class="footer-section">
+          <h3>Quick Links</h3>
+          <ul>
+            <li><a href="#home"><i class="fas fa-home"></i> Home</a></li>
+            <li><a href="#services"><i class="fas fa-procedures"></i> Services</a></li>
+            <li><a href="#doctors"><i class="fas fa-stethoscope"></i> Doctors</a></li>
+            <li><a href="#facility"><i class="fas fa-building"></i> Facility</a></li>
+            <li><a href="#about-us"><i class="fas fa-info-circle"></i> About Us</a></li>
+            <li><a href="#contact"><i class="fas fa-envelope"></i> Contact Us</a></li>
+          </ul>
+        </div>
+  
+        <div class="footer-section">
+          <h3>Open Hours</h3>
+          <p><i class="fas fa-clock"></i> Monday - Friday: Open 24hrs<br />
+             <i class="fas fa-clock"></i> Saturdays: Open<br />
+             <i class="fas fa-clock"></i> Sundays: Open<br />
+             <i class="fas fa-clock"></i> Public Holidays: Open</p>
+        </div>
+  
+        <div class="footer-section">
+          <h3>Emergencies</h3>
+          <p><i class="fas fa-phone-alt"></i> For emergencies call:<br />
+             +254755555555, +254755555555</p>
+        </div>
+  
+        <div class="social-media">
+          
+            <h3>Follow Us</h3>
+    
+            <div class="social-icons">
+                
+                <a href="https://www.twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
+                <a href="https://www.facebook.com" target="_blank"><i class="fab fa-facebook"></i></a>
+                <a href="https://www.instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+                <a href="https://api.whatsapp.com/send?phone=(555) 555-5555" class="doctors_whatsapp"><i class="fab fa-whatsapp"></i></a>
+            </div>
+          </div>
+        
+                 
+  
+      </div>
+      
+      <div class="footer-copyright">
+        © Copyright 2023 All Rights Reserved by CuraCare Hospital
+      </div>
+    </div>
+  </footer>
+  <!==========END OF CONTACT==============>
+  
+  
+  
+      
+      
+      
+
+
+
+
+<script src="./main.js"></script>
+</body>
+</html>

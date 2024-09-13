@@ -1,0 +1,421 @@
+header {
+    @include gradientbackground;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+
+    .container {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 5%;
+        align-items: center;
+        width: 90%;
+        margin-top: 3rem;
+
+        .header_content {
+            h1 {
+                font-size: 3rem;
+                line-height: 1.1;
+                letter-spacing: -3px;
+                font-weight: 300;
+            }
+
+            p {
+                margin: 1rem 0 2rem;
+                color: $light-color;
+                font-size: 1.1rem;
+            }
+
+            .cta-buttons {
+                display: flex;
+                flex-direction: column;
+                gap: 1rem;
+                margin-top: 2rem;
+
+                .sign-up-form {
+                    display: flex;
+                    width: 100%;
+
+                    input[type="text"] {
+                        flex: 1;
+                        padding: 0.5rem 1rem;
+                        border: 1px solid $light-color;
+                        border-radius: 5px 0 0 5px;
+                        font-size: 1rem;
+                        box-sizing: border-box;
+                    }
+
+                    .sign-up {
+                        background-color: $primary-color;
+                        color: white;
+                        padding: 0.5rem 1rem;
+                        font-size: 1rem;
+                        border: none;
+                        border-radius: 0 5px 5px 0;
+                        cursor: pointer;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+
+                        &:hover {
+                            background-color: darken($primary-color, 10%);
+                        }
+                    }
+                }
+
+                .button-group {
+                    display: flex;
+                    gap: 1rem;
+
+                    .book-now {
+                        background-color: $primary-color;
+                        color: white;
+                        padding: 1rem 2rem;
+                        font-size: 1rem;
+                        border-radius: 5px;
+                        text-decoration: none;
+
+                        &:hover {
+                            background-color: darken($primary-color, 10%);
+                        }
+                    }
+
+                    .play-video {
+                        display: flex;
+                        align-items: center;
+                        font-size: 1rem;
+                        cursor: pointer;
+                        text-decoration: none;
+                        background-color: $primary-color;
+                        color: white;
+                    
+                        .icon {
+                            margin-right: 0.5rem;
+                            font-size: 1.5rem;
+                        }
+                    
+                        &:hover {
+                            background-color: darken($primary-color, 10%);
+                        }
+                    }
+                    
+                    // Popup styles
+                    .video-popup {
+                        display: none;
+                        position: fixed;
+                        top: 0;
+                        left: 0;
+                        width: 100%;
+                        height: 100%;
+                        background-color: rgba(0, 0, 0, 0.5);
+                        justify-content: center;
+                        align-items: center;
+                        z-index: 1000; // Ensure it appears above other content
+                    }
+                    
+                    .video-popup-content {
+                        background-color: white;
+                        padding: 20px;
+                        border-radius: 10px;
+                        position: relative;
+                        max-width: 90%; // Ensure it doesn't overflow the screen
+                        max-height: 90%;
+                        overflow: auto;
+                    }
+                    
+                    .close-btn {
+                        position: absolute;
+                        top: 10px;
+                        right: 10px;
+                        font-size: 24px;
+                        cursor: pointer;
+                    }
+                    .iframe-container {
+                        position: relative;
+                        width: 100%;
+                        padding-bottom: 56.25%; /* 16:9 aspect ratio */
+                        height: 0;
+                        overflow: hidden;
+                    }
+                    
+                    .iframe-container iframe {
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        width: 100%;
+                        height: 100%;
+                    }
+                    
+                    
+                    .stats-container {
+                        grid-column: span 2;
+                        display: flex;
+                        flex-wrap: wrap; // Ensure items wrap on small screens
+                        justify-content: space-around;
+                        align-items: center;
+                        border: 2px solid $primary-color;
+                        padding: 1rem;
+                        border-radius: 10px;
+                        margin-top: 2rem;
+                        width: 100%; // Ensure full width
+                    
+                        .stat-item {
+                            flex: 1;  // Ensure all stat items take equal width
+                            text-align: center;
+                            color: $white-color;
+                            position: relative;
+                            padding: 1rem;  // Adjust padding to avoid cutoff
+                            max-width: 250px; // Optional: limit max width if needed
+                            box-sizing: border-box;
+                    
+                            h3 {
+                                font-size: 2rem;
+                                margin-bottom: 0.5rem;
+                            }
+                    
+                            p {
+                                font-size: 0.9rem;
+                                color: $light-color;
+                            }
+                    
+                            &:not(:last-child)::after {
+                                content: "";
+                                position: absolute;
+                                right: 0;
+                                top: 50%;
+                                transform: translateY(-50%);
+                                height: 50%;
+                                width: 1px;
+                                background-color: $light-color;
+                            }
+                        }
+                    }
+                    
+                }
+            }
+        
+                        
+
+            .image-container {
+                img {
+                    max-width: 100%;
+                    height: auto;
+                    border-radius: 10px;
+                }
+            }
+            
+            @media (max-width: 768px) {
+                .image-container {
+                    img {
+                        max-width: 100%;
+                        height: auto;
+                        border-radius: 10px;
+                    }
+                }
+            }
+            
+            @media (max-width: 480px) {
+                .image-container {
+                    img {
+                        max-width: 100%;
+                        height: auto;
+                        border-radius: 10px;
+                    }
+                }
+            }
+            
+    }
+
+    .stats-container {
+        grid-column: span 2;  // Make stats take up the full width beneath both columns
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        border: 2px solid $primary-color;
+        padding: 1rem;
+        border-radius: 10px;
+        margin-top: 2rem;
+        width: 90%;  // Set width so it's beneath both content and image
+
+        .stat-item {
+            text-align: center;
+            color: $white-color;
+            position: relative;
+            padding: 0 1rem;
+            flex: 1;
+
+            h3 {
+                font-size: 2rem;
+                margin-bottom: 0.5rem;
+            }
+
+            p {
+                font-size: 0.9rem;
+                color: $light-color;
+            }
+
+            &:not(:last-child)::after {
+                content: "";
+                position: absolute;
+                right: 0;
+                top: 50%;
+                transform: translateY(-50%);
+                height: 50%;
+                width: 1px;
+                background-color: $light-color;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    header {
+        height: auto;
+        .container {
+            grid-template-columns: 1fr;  // Switch to a single-column layout for smaller screens
+            gap: 1rem;
+
+            .header_content {
+                h1 {
+                    font-size: 2.2rem;
+                }
+            }
+
+            .image-container {
+                img {
+                    margin: 0 auto;
+                    display: block;
+                    max-width: 70%;  // Adjust image size for smaller screens
+                }
+            }
+        }
+
+        .stats-container {
+            flex-direction: row;  // Keep the stats container horizontal
+            gap: 0.5rem;
+            justify-content: space-between;
+        }
+    }
+}
+.popup-form {
+    display: none; /* Hidden by default */
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+
+    .form-container {
+        background-color: white;
+        margin: 10% auto; // Adjusted margin for better positioning
+        padding: 20px;
+        border: 1px solid #888;
+        width: 80%;
+        max-width: 500px; // Increased max-width for larger form
+        border-radius: 10px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        position: relative;
+
+        .close-btn {
+            position: absolute;
+            top: 10px;
+            right: 20px;
+            color: #aaa;
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+
+            &:hover,
+            &:focus {
+                color: black;
+                text-decoration: none;
+                cursor: pointer;
+            }
+        }
+
+        h2 {
+            margin-bottom: 20px;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+
+            label {
+                margin-bottom: 5px;
+            }
+
+            input {
+                margin-bottom: 15px;
+                padding: 10px;
+                border: 1px solid #ccc;
+                border-radius: 5px;
+            }
+
+            button {
+                padding: 10px;
+                background-color: #007bff;
+                color: white;
+                border: none;
+                border-radius: 5px;
+                cursor: pointer;
+                transition: background-color 0.3s;
+
+                &:hover {
+                    background-color: #0056b3;
+                }
+            }
+        }
+    }
+}
+
+
+@media screen and (max-width: 600px) {
+    header {
+        height: auto;
+        padding-top: 2rem;
+
+        .container {
+            gap: 1rem;
+            grid-template-columns: 1fr;
+
+            .header_content {
+                h1 {
+                    font-size: 1.8rem;
+                }
+
+                .stats-container {
+                    flex-direction: row;  // Ensure stats stay horizontal
+                    justify-content: space-between;
+                    gap: 0.5rem;
+
+                    .stat-item {
+                        h3 {
+                            font-size: 1.5rem;
+                        }
+                        p {
+                            font-size: 0.8rem;
+                        }
+                    }
+                }
+            }
+
+            .image-container {
+                img {
+                    max-width: 60%;  // Smaller image for very small screens
+                    margin: 0 auto;
+                    display: block;
+                }
+            }
+        }
+    }
+}
+        }
+    
+

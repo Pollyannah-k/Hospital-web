@@ -1,0 +1,39 @@
+@import 'config';
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
+@import 'variables';
+@import 'mixins';
+@import 'general';
+@import 'nav';
+@import 'header';
+@import 'services';
+@import 'animation';
+@import 'doctors';
+@import 'facility';
+@import 'about';
+@import 'contact';
+
+
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    list-style: none;
+    text-decoration: none;
+    box-sizing: border-box;   
+}
+@media screen and (max-width: 1024px) {
+    ul#nav_items {
+        display: none;
+    }
+}
+
+
+
+
+body{
+background-color: $primary-color-variant;    }
+    
+
+
+

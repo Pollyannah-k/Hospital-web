@@ -1,0 +1,34 @@
+
+
+$white-color: #ffffff;
+$secondary-color: #f72585; 
+
+// Mixin for the button
+@mixin button($text-color: $white-color, $background-color: $secondary-color) {
+    display: inline-block;
+    width: fit-content;
+    padding: 0.75rem 1rem; // Space instead of comma
+    border-radius: 0.4rem;
+    background-color: $background-color;
+    color: $text-color;
+    cursor: pointer;
+    transition: all 400ms ease;
+
+    // Hover state must be nested properly
+    &:hover {
+        background-color: lighten($background-color, 16%);
+    }
+}
+
+
+.btn {
+    @include button($white-color, $secondary-color);
+}
+@mixin gradientbackground {
+    background: linear-gradient(135deg, $primary-color, $primary-color-variant);
+    color: $white-color;
+
+    h1, h2, h3, h4, h5{
+        color: $white-color;
+    }
+}
