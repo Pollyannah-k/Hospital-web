@@ -27,6 +27,7 @@
 
     .service-item {
         flex-grow: 1;
+        flex-basis: calc(25% - 20px); /* Four items in first row */
         background-color: #007bff;
         text-align: center;
         padding: 20px;
@@ -50,43 +51,77 @@
         }
     }
 
-    /* First row - 4 items */
+    /* Adjusting Flex-grow for better responsiveness */
     .service-item {
-    flex-basis: calc(25% - 20px); /* Uniform for all items */
-}
+        flex-grow: 1; /* All items grow evenly */
+    }
 
+    /* First row - 4 items (for Services section) */
     .service-item:nth-child(-n+4) {
         flex-basis: calc(25% - 20px); /* Four items */
     }
 
-    /* Second row - 6 items */
+    /* Second row - 6 items (for Services section) */
     .service-item:nth-child(n+5):nth-child(-n+10) {
         flex-basis: calc(16.66% - 20px); /* Six items */
     }
 
-    /* Third row - 4 items */
-    .service-item:nth-child(n+11) {
-        flex-basis: calc(25% - 20px); /* Four items */
+    /* Are you looking for section - 4 items in a row */
+    .looking-for-container {
+        display: flex;
+        flex-grow: 1;
+        flex-wrap: nowrap; /* Ensures all items are on one row */
+        justify-content: space-between;
+        gap: 20px;
+        max-width: 1200px;
+        margin: auto;
     }
 
-    i {
-        font-size: 2rem;
-        margin-bottom: 20px;
+    .looking-for-item {
+        flex-grow: 1;
+        flex-basis: calc(25% - 20px); /* Four items in one row */
+        background-color: #28a745;
+        text-align: center;
+        padding: 20px;
+        box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
         color: white;
-    }
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        box-sizing: border-box;
+        min-height: 300px;
+        transition: background-color 0.3s ease;
 
-    h3 {
-        font-size: 1.5rem;
-        color: white;
-        margin-bottom: 10px;
+        &:hover {
+            background-color: darken(#28a745, 10%);
+        }
+
+        i {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            color: white;
+        }
+
+        h3 {
+            font-size: 1.5rem;
+            color: white;
+            margin-bottom: 10px;
+        }
+
+        p {
+            font-size: 1rem;
+            color: #eaeaea;
+            line-height: 1.6;
+        }
     }
 
     @media screen and (max-width: 600px) {
-        .container {
+        .container, .looking-for-container {
             justify-content: center;
+            flex-wrap: wrap; /* Allow wrapping on smaller screens */
 
-            .service-item {
-                flex-basis: calc(50% - 20px); /* Two items per row */
+            .service-item, .looking-for-item {
+                flex-basis: calc(50% - 20px); /* Two items per row on mobile */
                 margin-bottom: 20px;
 
                 h3 {
