@@ -51,6 +51,10 @@
     }
 
     /* First row - 4 items */
+    .service-item {
+    flex-basis: calc(25% - 20px); /* Uniform for all items */
+}
+
     .service-item:nth-child(-n+4) {
         flex-basis: calc(25% - 20px); /* Four items */
     }
