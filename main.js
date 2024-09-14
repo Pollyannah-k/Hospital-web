@@ -167,3 +167,29 @@ window.addEventListener('click', function(event) {
       document.getElementById('video-popup').style.display = 'none';
   }
 });
+import com.google.gson.Gson;
+import spark.Spark;
+
+public class Main {
+    public static void main(String[] args) {
+        Counter counter = new Counter();
+
+        Spark.get("/getCounters", (req, res) -> {
+            counter.incrementCounters();
+            return new Gson().toJson(counter);
+        });
+    }
+}
+import com.google.gson.Gson;
+import spark.Spark;
+
+public class Main {
+    public static void main(String[] args) {
+        Counter counter = new Counter();
+
+        Spark.get("/getCounters", (req, res) -> {
+            counter.incrementCounters();
+            return new Gson().toJson(counter);
+        });
+    }
+}
