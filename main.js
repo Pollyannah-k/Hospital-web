@@ -213,3 +213,28 @@ document.addEventListener("DOMContentLoaded", () => {
       startCounting();
   });
 });
+document.addEventListener("DOMContentLoaded", function() {
+    const counters = document.querySelectorAll('.stat-item .count');
+
+    counters.forEach(counter => {
+        counter.innerText = '0';
+
+        const updateCounter = () => {
+            const target = +counter.parentElement.getAttribute('data-target');
+            const count = +counter.innerText;
+
+            // Calculate the increment per frame
+            const increment = target / 200; // You can adjust this to change the speed
+
+            if (count < target) {
+                counter.innerText = Math.ceil(count + increment);
+                setTimeout(updateCounter, 1); // You can adjust this to change the smoothness
+            } else {
+                counter.innerText = target;
+            }
+        };
+
+        updateCounter();
+    });
+});
+
