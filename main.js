@@ -167,29 +167,49 @@ window.addEventListener('click', function(event) {
       document.getElementById('video-popup').style.display = 'none';
   }
 });
-import com.google.gson.Gson;
-import spark.Spark;
+document.addEventListener('DOMContentLoaded', () => {
+  const counters = document.querySelectorAll('.count');
+  const speed = 200; // Adjust the speed as needed
 
-public class Main {
-    public static void main(String[] args) {
-        Counter counter = new Counter();
+  counters.forEach(counter => {
+      const updateCount = () => {
+          const target = +counter.getAttribute('data-count');
+          const count = +counter.innerText.replace('%', '');
+          const increment = target / speed;
 
-        Spark.get("/getCounters", (req, res) -> {
-            counter.incrementCounters();
-            return new Gson().toJson(counter);
-        });
-    }
-}
-import com.google.gson.Gson;
-import spark.Spark;
+          if (count < target) {
+              counter.innerText = Math.ceil(count + increment) + (counter.id === 'satisfaction' || counter.id === 'success' ? '%' : '');
+              setTimeout(updateCount, 1);
+          } else {
+              counter.innerText = target + (counter.id === 'satisfaction' || counter.id === 'success' ? '%' : '');
+          }
+      };
 
-public class Main {
-    public static void main(String[] args) {
-        Counter counter = new Counter();
+      updateCount();
+  });
+});
+document.addEventListener("DOMContentLoaded", () => {
+  const counters = document.querySelectorAll('.count');
+  const speed = 100;  // Speed of counting animation
 
-        Spark.get("/getCounters", (req, res) -> {
-            counter.incrementCounters();
-            return new Gson().toJson(counter);
-        });
-    }
-}
+  counters.forEach(counter => {
+      const target = +counter.parentElement.getAttribute('data-target');
+      const startCounting = () => {
+          let currentValue = +counter.innerText;
+
+          // If the current value is less than the target, increment it
+          if (currentValue < target) {
+              counter.innerText = Math.ceil(currentValue + target / speed);
+          } else {
+              // Reset counter to 0 when it reaches the target
+              counter.innerText = 0;
+          }
+
+          // Repeat the counting process continuously
+          setTimeout(startCounting, 50); // Adjust this for smoother/faster animation
+      };
+
+      // Start counting animation
+      startCounting();
+  });
+});
