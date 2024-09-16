@@ -154,6 +154,14 @@ header {
             grid-template-columns: 1fr;
             gap: 1rem;
 
+            .video-container {
+                order: 1; // Ensure video comes after the content
+            }
+
+            .header_content {
+                order: 0; // Content comes first
+            }
+
             .stats-container {
                 flex-direction: row;
                 gap: 0.5rem;
