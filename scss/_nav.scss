@@ -18,19 +18,10 @@ nav {
         padding: 0 2rem;
 
         .nav_logo {
-            img.logo {
-                width: 100px;   // Adjust size based on your design
-                height: auto;   // Keeps the aspect ratio
-                display: block;
-                margin: 0 auto;
-
-                @media (max-width: 1024px) {
-                    width: 80px; // Reduce size for smaller screens
-                }
-
-                @media (max-width: 600px) {
-                    width: 60px; // Further reduce size for very small screens
-                }
+            h3 {
+                color: $white-color;
+                font-weight: bold;
+                font-size: 1.5rem;
             }
         }
 
@@ -206,11 +197,12 @@ nav {
                       }
                     }
                   }
+                  
             }
         }
     }
 }
-
+/* Popup Form */
 /* Popup Form */
 .form-popup {
     display: none;
@@ -229,9 +221,9 @@ nav {
       width: 90%;
       right: 5%;
     }
-}
+  }
   
-.form-container {
+  .form-container {
     max-width: 100%;
   
     input[type="text"],
@@ -265,6 +257,6 @@ nav {
     }
   
     .cancel {
-      background-color: purple;
+      background-color:purple;
     }
-}
+  }
